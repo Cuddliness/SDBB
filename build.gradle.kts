@@ -4,7 +4,7 @@ plugins {
     id("io.freefair.lombok") version "9.1.0"
 }
 
-group = "care.cuddliness.stacy"
+group = "care.cuddliness.base"
 version = "1.0-SNAPSHOT"
 
 
