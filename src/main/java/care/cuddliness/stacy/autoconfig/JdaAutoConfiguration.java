@@ -10,13 +10,9 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import javax.security.auth.login.LoginException;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @AutoConfiguration
 @RequiredArgsConstructor
@@ -31,11 +27,11 @@ public class JdaAutoConfiguration {
                 .disableCache(CacheFlag.MEMBER_OVERRIDES)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .setChunkingFilter(ChunkingFilter.ALL)
-                .enableIntents( GatewayIntent.GUILD_MEMBERS,
+                .enableIntents(GatewayIntent.GUILD_MEMBERS,
                         GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS,
                         GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_PRESENCES,
                         GatewayIntent.GUILD_INVITES, GatewayIntent.GUILD_MODERATION,
-                GatewayIntent.MESSAGE_CONTENT).build()
+                        GatewayIntent.MESSAGE_CONTENT).build()
                 .awaitReady();
 
     }

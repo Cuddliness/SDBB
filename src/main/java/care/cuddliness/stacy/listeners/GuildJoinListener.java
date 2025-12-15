@@ -13,9 +13,10 @@ import org.springframework.stereotype.Component;
 public class GuildJoinListener extends ListenerAdapter {
 
     @Autowired
-    private GuildRepositoryInterface guildRepositoryInterface ;
+    private GuildRepositoryInterface guildRepositoryInterface;
     @Autowired
     private static final @NotNull Logger LOGGER = LoggerFactory.getLogger(GuildJoinListener.class);
+
     @Override
     public void onGuildJoin(GuildJoinEvent event) {
 

@@ -1,7 +1,6 @@
 package care.cuddliness.stacy.autoconfig;
 
-import care.cuddliness.stacy.command.StacyCommandHandler;
-import care.cuddliness.stacy.repositories.*;
+import care.cuddliness.stacy.command.BaseCommandHandler;
 import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
@@ -14,15 +13,13 @@ import org.springframework.context.annotation.Bean;
 @RequiredArgsConstructor
 public class DiscordCommandAutoConfiguration {
     private final ApplicationContext applicationContext;
-    private final GuildRepositoryInterface guildRepositoryInterface;
-
     private final JDA jda;
 
     @Bean
     @ConditionalOnMissingBean
-    public StacyCommandHandler discordCommandBackend() {
+    public BaseCommandHandler discordCommandBackend() {
         Guild guild = this.jda.getGuildById(-1L);
-        return new StacyCommandHandler(this.applicationContext, this.jda, guild);
+        return new BaseCommandHandler(this.applicationContext, this.jda, guild);
     }
 
 }

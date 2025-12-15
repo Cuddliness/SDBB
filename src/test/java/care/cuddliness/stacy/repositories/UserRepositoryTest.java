@@ -1,6 +1,6 @@
 package care.cuddliness.stacy.repositories;
 
-import care.cuddliness.stacy.entities.user.StacyUser;
+import care.cuddliness.stacy.entities.user.BaseUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -19,8 +19,8 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    public void testSave(){
-        StacyUser user = new StacyUser();
+    public void testSave() {
+        BaseUser user = new BaseUser();
         user.setUserId(new Random().nextLong());
         user.setGuildId(new Random().nextLong());
         user.setId(UUID.randomUUID());
@@ -31,12 +31,11 @@ public class UserRepositoryTest {
         Long userId = user.getUserId();
         Long guildId = user.getGuildId();
 
-        StacyUser fetchTest = userRepository.findByUserIdAndGuildId(userId, guildId);
+        BaseUser fetchTest = userRepository.findByUserIdAndGuildId(userId, guildId);
 
         Assertions.assertEquals(userId, fetchTest.getUserId());
         Assertions.assertEquals(guildId, fetchTest.getGuildId());
         Assertions.assertEquals(uuid, fetchTest.getId());
-
 
 
     }

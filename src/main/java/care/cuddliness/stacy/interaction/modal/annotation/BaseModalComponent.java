@@ -1,6 +1,5 @@
-package care.cuddliness.stacy.interaction.button.annotation;
+package care.cuddliness.stacy.interaction.modal.annotation;
 
-import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.ElementType;
@@ -11,8 +10,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Component
-public @interface StacyButtonComponent {
+public @interface BaseModalComponent {
 
     String name();
-    ButtonStyle style();
 }

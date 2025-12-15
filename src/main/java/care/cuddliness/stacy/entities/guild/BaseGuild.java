@@ -1,12 +1,14 @@
 package care.cuddliness.stacy.entities.guild;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "guilds")
-public class StacyGuild {
+public class BaseGuild {
 
 
     @Getter
@@ -14,7 +16,8 @@ public class StacyGuild {
     @Id
     private Long id;
     public String naughtyWords;
-    public StacyGuild(){
+
+    public BaseGuild() {
 
     }
 

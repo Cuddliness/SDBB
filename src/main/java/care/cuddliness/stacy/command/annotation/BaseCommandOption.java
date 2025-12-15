@@ -10,15 +10,17 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Component
 @Repeatable(CommandOptions.class)
-public @interface StacyCommandOption {
+public @interface BaseCommandOption {
 
     @NotNull String name();
-    @NotNull String descrip();
-    @NotNull OptionType t();
+
+    @NotNull String description();
+
+    @NotNull OptionType type();
+
     boolean required() default false;
-    boolean auto() default false;
 
-
+    boolean autoComplete() default false;
 
 
 }

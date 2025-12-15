@@ -1,12 +1,12 @@
 package care.cuddliness.stacy.command.data.info;
 
 
-public class StacyCommandInfo {
+public class BaseCommandInfo {
 
     private String name;
     private long id;
 
-    public StacyCommandInfo(String name, long id) {
+    public BaseCommandInfo(String name, long id) {
         this.name = name;
         this.id = id;
     }

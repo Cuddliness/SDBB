@@ -1,6 +1,6 @@
 package care.cuddliness.stacy.command.annotation;
 
-import care.cuddliness.stacy.command.data.StacyCommandInterface;
+import care.cuddliness.stacy.command.data.BaseCommandInterface;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.ElementType;
@@ -11,9 +11,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Component
-public @interface StacySubCommandComponent {
+public @interface BaseSubCommandComponent {
 
-    Class<? extends StacyCommandInterface> parent();
+    Class<? extends BaseCommandInterface> parent();
+
     String subCommandId();
 
     String subCommandGroupid() default "";

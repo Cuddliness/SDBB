@@ -1,5 +1,6 @@
-package care.cuddliness.stacy.interaction.modal.annotation;
+package care.cuddliness.stacy.command.annotation;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.ElementType;
@@ -10,7 +11,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Component
-public @interface StacyModalComponent {
+public @interface BaseCommandComponent {
 
-    String name();
+    @NotNull String name();
+
+
 }
